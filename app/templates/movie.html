@@ -54,7 +54,7 @@
             <input id="gradeRange" name="gradeRange" type="range" min="1" max="10" value="{{ item.get('grade', 6)|string }}" step="1" class="slider">
         </div>
 
-        <input class="datepicker-here" data-language='en' data-position='top center' data-date-format="dd/mm/yyyy">
+        <input class="datepicker-here" data-language='en' data-position='top center'>
 
         <input class="styled-button full" type="submit" value="{{ 'Update' if item.get('grade') else 'Add' }}">
 
