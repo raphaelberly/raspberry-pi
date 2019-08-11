@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/movie.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/slider.css')}}">
+    <!-- Date picker -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="{{ url_for('static', filename='css/datepicker.min.css') }}" rel="stylesheet" type="text/css">
+    <script src="{{ url_for('static', filename='js/datepicker.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/datepicker.en.js') }}"></script>
 </head>
 
 <body ontouchstart="">
@@ -48,6 +53,9 @@
             <div class="mentions"><b><span id="gradeValue"></span>/10</b></div>
             <input id="gradeRange" name="gradeRange" type="range" min="1" max="10" value="{{ item.get('grade', 6)|string }}" step="1" class="slider">
         </div>
+
+        <input class="datepicker-here" data-language='en' data-position='top center' data-date-format="dd/mm/yyyy">
+
         <input class="styled-button full" type="submit" value="{{ 'Update' if item.get('grade') else 'Add' }}">
 
     </form>
